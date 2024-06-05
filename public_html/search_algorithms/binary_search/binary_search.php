@@ -11,10 +11,6 @@ function binary_search(int $searchNum) {
 
     while ($minIndex <= $maxIndex) {
         $middleIndex = round(($minIndex + $maxIndex) / 2);
-
-        echo $minIndex . " " . $maxIndex . "\n\n";
-        echo $middleIndex . "\n\n";
-
         $testValue = $numbers[$middleIndex];
 
         if($testValue == $searchNum) {
