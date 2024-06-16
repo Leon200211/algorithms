@@ -33,6 +33,28 @@ function selectionSort(array $array): array
     return $sortedArray;
 }
 
+function selectionSort_2(array $array): array {
+    $arrayLength = count($array);
+
+    for ($i = 0; $i < $arrayLength; $i++) {
+        $low = $i;
+
+        for ($j = $i + 1; $j < $arrayLength; $j++) {
+            if ($array[$j] < $array[$low]) {
+                $low = $j;
+            }
+        }
+
+        if ($array[$i] > $array[$low]) {
+            $tmp = $array[$i];
+            $array[$i] = $array[$low];
+            $array[$low] = $tmp;
+        }
+    }
+
+    return $array;
+}
 
 
 var_dump(selectionSort([5, 3, 6, 2, 10]));
+var_dump(selectionSort_2([5, 3, 6, 2, 10]));
